@@ -51,7 +51,7 @@
           <h2>Featured book: Surreal by Michèle Gerber Klein</h2>
         </div>
         <div id="main-content">
-          <form id="min-form" onsubmit="handleForm(event)">
+          <form class="form" id="min-form" onsubmit="handleForm(event)">
             <label for="">Введіть 10 чисел:</label>
             <input type="number" />
             <input type="number" />
@@ -64,6 +64,15 @@
             <input type="number" />
             <input type="number" />
             <button class="submit-button" type="submit">Submit</button>
+          </form>
+          <form id="css-instruction-form" class="form hidden">
+            <label for="tag-name">Назва тегу</label>
+            <input type="text" name="tag-name" />
+            <label for="tag-property">Назва властивості</label>
+            <input type="text" name="tag-property" />
+            <label for="tag-value">Значення властивості</label>
+            <input type="text" name="tag-value" />
+            <button type="submit">Додати CSS-інструкцію</button>
           </form>
         </div>
       </div>
@@ -88,36 +97,7 @@
         <span></span><span></span><span></span>
       </label>
       <label class="menu-overlay" for="menu-toggle" aria-hidden="true"></label>
-      <ul id="primary-nav">
-        <li id="active-page">
-          <a href="index.html">
-            <h2>Home</h2>
-          </a>
-        </li>
-        <li>
-          <a href="biography.html">
-            <h2>Biography</h2>
-          </a>
-        </li>
-        <li>
-          <a href="famous-works.html">
-            <h2>
-              Most famous<br />
-              works
-            </h2>
-          </a>
-        </li>
-        <li>
-          <a href="gallery.html">
-            <h2>Gallery</h2>
-          </a>
-        </li>
-        <li>
-          <a href="about-us.html">
-            <h2>About Us</h2>
-          </a>
-        </li>
-      </ul>
+      <ul id="primary-nav"></ul>
     </nav>
     <footer>
       <div id="footer-content">
@@ -146,13 +126,12 @@
           </a>
         </div>
       </div>
-      <a id="explore-more" href="https://www.dalipaintings.com/"
-        ><h2>Explore more!</h2></a
-      >
+      <h2 id="explore-more">Explore more!</h2>
     </footer>
     <!-- Hamburger/menu behavior handled via pure CSS (checkbox + :checked). JS removed. -->
   </body>
-  <script src="scripts/script.js"></script>
+  <script type="module" src="scripts/script.js"></script>
   <script src="scripts/task3.js"></script>
-  <script src="scripts/task4.js"></script>
+  <script type="module" src="scripts/task4.js"></script>
+  <script type="module" src="scripts/task5.js"></script>
 </html>

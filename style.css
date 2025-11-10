@@ -270,14 +270,24 @@ footer .social-icon {
   min-height: 0;
 }
 
-#min-form {
+.form {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
 .hidden {
-  display: none !important;
+  display: none;
+}
+
+.remove-tag-button {
+  background-color: var(--rose);
+  color: white;
+  border: none;
+  padding: 8px;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
 .submit-button {
