@@ -45,18 +45,20 @@
           <h2>Featured book: Surreal by Michèle Gerber Klein</h2>
         </div>
         <div id="main-content">
-          <div>
-            <img
-              src="img/home/first-book.jpg"
-              alt="Red cover of book 'Surreal'"
-            />
-          </div>
-          <div>
-            <img
-              src="img/home/second-book.png"
-              alt="Blue cover of book 'Surreal'"
-            />
-          </div>
+          <form id="min-form" onsubmit="handleForm(event)">
+            <label for="">Введіть 10 чисел:</label>
+            <input type="number" />
+            <input type="number" />
+            <input type="number" />
+            <input type="number" />
+            <input type="number" />
+            <input type="number" />
+            <input type="number" />
+            <input type="number" />
+            <input type="number" />
+            <input type="number" />
+            <button class="submit-button" type="submit">Submit</button>
+          </form>
         </div>
       </div>
     </main>
@@ -145,4 +147,5 @@
     <!-- Hamburger/menu behavior handled via pure CSS (checkbox + :checked). JS removed. -->
   </body>
   <script src="script.js"></script>
+  <script src="task3.js"></script>
 </html>

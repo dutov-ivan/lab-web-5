@@ -261,12 +261,33 @@ footer .social-icon {
 }
 
 #main-content {
+  color: white;
   display: flex;
   justify-content: space-between;
   gap: 16px;
   overflow: hidden;
   flex: 1 1 auto;
   min-height: 0;
+}
+
+#min-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.submit-button {
+  background-color: white;
+  color: var(--deep-blue);
+  border: none;
+  padding: 8px;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
 #main-content > div {
