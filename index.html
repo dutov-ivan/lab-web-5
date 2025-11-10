@@ -7,7 +7,11 @@
   <body>
     <header>
       <div id="company-heading">
-        <img src="img/common/salvador.png" alt="Salvador Dali" />
+        <img
+          id="salvador-img"
+          src="img/common/salvador.png"
+          alt="Salvador Dali"
+        />
         <h1>Salvadorium</h1>
       </div>
       <p class="quote">
@@ -51,7 +55,7 @@
           <h2>Featured book: Surreal by Michèle Gerber Klein</h2>
         </div>
         <div id="main-content">
-          <form class="form" id="min-form" onsubmit="handleForm(event)">
+          <form class="flex-form" id="min-form" onsubmit="handleForm(event)">
             <label for="">Введіть 10 чисел:</label>
             <input type="number" />
             <input type="number" />
@@ -65,7 +69,7 @@
             <input type="number" />
             <button class="submit-button" type="submit">Submit</button>
           </form>
-          <form id="css-instruction-form" class="form hidden">
+          <form id="css-instruction-form" class="flex-form hidden">
             <label for="tag-name">Назва тегу</label>
             <input type="text" name="tag-name" />
             <label for="tag-property">Назва властивості</label>
@@ -126,7 +130,7 @@
           </a>
         </div>
       </div>
-      <h2 id="explore-more">Explore more!</h2>
+      <div id="explore-more"><h2>Explore more!</h2></div>
     </footer>
     <!-- Hamburger/menu behavior handled via pure CSS (checkbox + :checked). JS removed. -->
   </body>

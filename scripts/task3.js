@@ -5,23 +5,17 @@ function setCookie(key, value, days) {
     date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
     expires = "; expires=" + date.toUTCString();
   }
-  document.cookie = `${key}=${value || ""}${expires}; path=/`;
+  document.cookie = `${key}=${value || ""}${expires}; path=/; SameSite=Lax`;
 }
 
 function getCookie(key) {
   const nameEQ = key + "=";
-  return document.cookie
-    .split("; ")
-    .find((row) => row.startsWith(nameEQ))
-    .split("=")[1];
+  const row = document.cookie.split("; ").find((row) => row.startsWith(nameEQ));
+  return row ? row.split("=")[1] : null;
 }
 
 function deleteCookie(key) {
   setCookie(key, "", -1);
-}
-
-function handleForm(event) {
-  event.preventDefault();
 }
 
 function countMinNumbers(numbers) {
@@ -38,27 +32,6 @@ function countMinNumbers(numbers) {
   return minCount;
 }
 
-window.onload = function () {
-  const savedCount = getCookie("minCount");
-
-  if (savedCount) {
-    const useSaved = confirm(
-      `Збережені дані в cookies: ${savedCount}. Бажаєте їх використати?`
-    );
-    if (useSaved) {
-      document.getElementById("min-form").classList.add("hidden");
-
-      alert(
-        `Дані взято з cookies: ${savedCount}. Після цього сторінку потрібно перезавантажити.`
-      );
-    } else {
-      deleteCookie("minCount");
-      location.reload();
-    }
-  } else {
-  }
-};
-
 function handleForm(event) {
   event.preventDefault();
   const inputs = document.querySelectorAll("#min-form input[type='number']");
@@ -68,3 +41,25 @@ function handleForm(event) {
   setCookie("minCount", minCount, 7);
   location.reload();
 }
+
+window.addEventListener("DOMContentLoaded", function () {
+  const savedCount = getCookie("minCount");
+  const minForm = document.getElementById("min-form");
+
+  if (savedCount) {
+    const useSaved = confirm(
+      `Збережені дані в cookies: ${savedCount}. Бажаєте їх використати?`
+    );
+    if (useSaved) {
+      minForm.classList.add("hidden");
+      minForm.classList.remove("form");
+
+      alert(
+        `Дані взято з cookies: ${savedCount}. Після цього сторінку потрібно перезавантажити.`
+      );
+    } else {
+      deleteCookie("minCount");
+      location.reload();
+    }
+  }
+});
